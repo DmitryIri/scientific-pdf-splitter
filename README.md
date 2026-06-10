@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-A portfolio project that demonstrates a synthetic demo and production-inspired architecture for converting scientific journal issue metadata into validated article-level CSV and JSON exports.
+A portfolio project that demonstrates a synthetic demo and production-inspired architecture for scientific PDF article extraction workflows: metadata contracts, validation, CSV/JSON exports, CI, and testing.
 
 ```text
 article_id,title,page_start,page_end,sha256
@@ -13,9 +13,32 @@ SPLIT-002,Rule-Based Detection of Article Headers in Journal Issues,4,7,9f44...
 SPLIT-003,Integrity Checks for Article-Level CSV and JSON Exports,8,10,31a2...
 ```
 
+## Current Scope
+
+This repository is currently a synthetic demo, portfolio project, production-inspired architecture, and proof-of-concept for document processing workflows.
+
+The implemented layer focuses on:
+
+- typed article metadata models
+- deterministic synthetic sample data
+- CSV and JSON export contracts
+- validation rules for article IDs, page ranges, authors, titles, and SHA-256 hashes
+- pytest, ruff, and GitHub Actions checks
+
+It does not include real article boundary detection or production extraction heuristics yet. The README, samples, and tests are intentionally framed to avoid overstating the current implementation.
+
 ## What It Solves
 
-Scientific journal issues are often distributed as long PDF files where article boundaries, page ranges, metadata, and export integrity need to be tracked consistently. This repository is a synthetic demo of the data contract and validation layer for that workflow. It is designed as a portfolio project, not as a claim of production readiness.
+Scientific journal issues are often distributed as long PDF files where article boundaries, page ranges, metadata, and export integrity need to be tracked consistently. This project shows the public skeleton of that workflow: a clean data contract, reproducible sample outputs, automated checks, and a staged path toward a fuller document-processing pipeline.
+
+## Potential Business Applications
+
+- Scientific publishing workflows
+- Medical journal processing
+- Research archive digitization
+- Regulatory document processing
+- Structured metadata extraction pipelines
+- Academic ETL systems
 
 ## Quick Start
 
@@ -50,7 +73,23 @@ ArticleMetadata models
 Validator -> CSV/JSON writers -> downstream editorial workflow
 ```
 
-The current skeleton focuses on the normalized metadata layer, output contract, and validation behavior. A later implementation layer can add article boundary detection, metadata parsing, reference isolation, and PDF text extraction on top of this structure.
+See also:
+
+- `docs/architecture.md` for the implemented data flow
+- `docs/architecture_overview.md` for the intended document-processing pipeline shape
+- `docs/roadmap.md` for completed and planned phases
+
+## Next Implementation Layer
+
+The next implementation layer can add these capabilities without changing the public output contract:
+
+- Article boundary detection
+- PDF text extraction
+- Metadata parsing
+- Reference isolation
+- Validation pipeline expansion
+
+These are planned directions, not claims about the current version.
 
 ## Running Tests
 
