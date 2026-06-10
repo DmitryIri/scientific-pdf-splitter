@@ -1,0 +1,39 @@
+{
+  "articles": [
+    {
+      "article_id": "SPLIT-001",
+      "title": "Synthetic Cohort Study of Editorial Workflow Timing",
+      "authors": [
+        "Alex Morgan",
+        "Priya Shah"
+      ],
+      "page_start": 1,
+      "page_end": 3,
+      "abstract": "A synthetic study block used to demonstrate article boundary metadata.",
+      "sha256": "97613dc0c6a86557b625ac27948d6279c69404dff1a35109fdb8c3ccfeca70b5"
+    },
+    {
+      "article_id": "SPLIT-002",
+      "title": "Rule-Based Detection of Article Headers in Journal Issues",
+      "authors": [
+        "Maya Chen"
+      ],
+      "page_start": 4,
+      "page_end": 7,
+      "abstract": "A synthetic methods block for illustrating deterministic extraction output.",
+      "sha256": "b4d946e2e1f94cb13e60a1b9e794319be024c94e38fd4527188c02088c712bcd"
+    },
+    {
+      "article_id": "SPLIT-003",
+      "title": "Integrity Checks for Article-Level CSV and JSON Exports",
+      "authors": [
+        "Jon Bell",
+        "Nora Kim"
+      ],
+      "page_start": 8,
+      "page_end": 10,
+      "abstract": "A synthetic validation block showing SHA-256 metadata integrity checks.",
+      "sha256": "3c2d3b6b2c475293de078283930585eca69118466d0130926a5abe2f8e487cf9"
+    }
+  ]
+}

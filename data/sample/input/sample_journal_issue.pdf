@@ -1,0 +1,102 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 269 >>
+stream
+BT
+/F1 12 Tf
+72 760 Td
+14 TL
+(Article ID: SPLIT-001) Tj
+T*
+(Synthetic Cohort Study of Editorial Workflow Timing) Tj
+T*
+(Authors: Alex Morgan, Priya Shah) Tj
+T*
+(Pages: 1-3) Tj
+T*
+() Tj
+T*
+(A synthetic study block used to demonstrate article boundary metadata.) Tj
+T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 266 >>
+stream
+BT
+/F1 12 Tf
+72 760 Td
+14 TL
+(Article ID: SPLIT-002) Tj
+T*
+(Rule-Based Detection of Article Headers in Journal Issues) Tj
+T*
+(Authors: Maya Chen) Tj
+T*
+(Pages: 4-7) Tj
+T*
+() Tj
+T*
+(A synthetic methods block for illustrating deterministic extraction output.) Tj
+T*
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 270 >>
+stream
+BT
+/F1 12 Tf
+72 760 Td
+14 TL
+(Article ID: SPLIT-003) Tj
+T*
+(Integrity Checks for Article-Level CSV and JSON Exports) Tj
+T*
+(Authors: Jon Bell, Nora Kim) Tj
+T*
+(Pages: 8-10) Tj
+T*
+() Tj
+T*
+(A synthetic validation block showing SHA-256 metadata integrity checks.) Tj
+T*
+ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000323 00000 n 
+0000000643 00000 n 
+0000000769 00000 n 
+0000001086 00000 n 
+0000001212 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+1533
+%%EOF
