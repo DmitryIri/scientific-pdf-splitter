@@ -9,6 +9,6 @@ def test_sample_article_metadata_shape() -> None:
     assert isinstance(first, ArticleMetadata)
     assert first.article_id == "SPLIT-001"
     assert first.page_start == 1
-    assert first.page_end == 3
+    assert first.page_end == 4
     assert len(first.sha256) == 64
     assert first.to_csv_row()["authors"] == "Alex Morgan; Priya Shah"

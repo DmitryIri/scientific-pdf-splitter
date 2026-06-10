@@ -13,18 +13,20 @@ if str(SRC) not in sys.path:
 
 from pdf_splitter.models import ArticleMetadata, sample_articles  # noqa: E402
 from pdf_splitter.output import write_outputs  # noqa: E402
+from pdf_splitter.workflow import write_workflow_artifacts  # noqa: E402
 
 
 def _pdf_escape(value: str) -> str:
     return value.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
 
 
-def _content_stream(article: ArticleMetadata) -> bytes:
+def _content_stream(article: ArticleMetadata, page_number: int) -> bytes:
     lines = [
         f"Article ID: {article.article_id}",
         article.title,
         f"Authors: {', '.join(article.authors)}",
         f"Pages: {article.page_start}-{article.page_end}",
+        f"Synthetic issue page: {page_number}",
         "",
         article.abstract,
     ]
@@ -37,24 +39,29 @@ def _content_stream(article: ArticleMetadata) -> bytes:
 
 
 def write_synthetic_pdf(path: Path, articles: list[ArticleMetadata]) -> Path:
-    """Write a minimal valid PDF with one page per synthetic article."""
+    """Write a minimal valid PDF with one page per synthetic issue page."""
 
     path.parent.mkdir(parents=True, exist_ok=True)
     objects: list[bytes] = []
-    page_ids = [4 + index * 2 for index in range(len(articles))]
-    content_ids = [5 + index * 2 for index in range(len(articles))]
+    issue_pages = [
+        (page_number, article)
+        for article in articles
+        for page_number in range(article.page_start, article.page_end + 1)
+    ]
+    page_ids = [4 + index * 2 for index in range(len(issue_pages))]
+    content_ids = [5 + index * 2 for index in range(len(issue_pages))]
     kids = " ".join(f"{page_id} 0 R" for page_id in page_ids)
 
     objects.append(b"<< /Type /Catalog /Pages 2 0 R >>")
-    objects.append(f"<< /Type /Pages /Kids [{kids}] /Count {len(articles)} >>".encode("ascii"))
+    objects.append(f"<< /Type /Pages /Kids [{kids}] /Count {len(issue_pages)} >>".encode("ascii"))
     objects.append(b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")
 
-    for content_id, article in zip(content_ids, articles, strict=True):
+    for content_id, (page_number, article) in zip(content_ids, issue_pages, strict=True):
         page_obj = (
             f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] "
             f"/Resources << /Font << /F1 3 0 R >> >> /Contents {content_id} 0 R >>"
         )
-        content = _content_stream(article)
+        content = _content_stream(article, page_number)
         stream = b"<< /Length " + str(len(content)).encode("ascii") + b" >>\nstream\n"
         stream += content + b"\nendstream"
         objects.append(page_obj.encode("ascii"))
@@ -94,11 +101,18 @@ def main() -> None:
     pdf_path = write_synthetic_pdf(ROOT / "data/sample/input/sample_journal_issue.pdf", articles)
     metadata_path = write_metadata(ROOT / "data/sample/input/articles_metadata.json", articles)
     csv_path, json_path = write_outputs(articles, ROOT / "data/sample/output")
+    manifest_path, report_path, checksums_path = write_workflow_artifacts(
+        articles,
+        ROOT / "data/sample/output",
+    )
 
     print(f"Synthetic PDF: {pdf_path.relative_to(ROOT)}")
     print(f"Metadata JSON: {metadata_path.relative_to(ROOT)}")
     print(f"CSV output: {csv_path.relative_to(ROOT)}")
     print(f"JSON output: {json_path.relative_to(ROOT)}")
+    print(f"Export manifest: {manifest_path.relative_to(ROOT)}")
+    print(f"Issue report: {report_path.relative_to(ROOT)}")
+    print(f"Checksums: {checksums_path.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

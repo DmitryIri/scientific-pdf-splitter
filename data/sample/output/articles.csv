@@ -1,4 +1,4 @@
 article_id,title,authors,page_start,page_end,sha256
-SPLIT-001,Synthetic Cohort Study of Editorial Workflow Timing,Alex Morgan; Priya Shah,1,3,97613dc0c6a86557b625ac27948d6279c69404dff1a35109fdb8c3ccfeca70b5
-SPLIT-002,Rule-Based Detection of Article Headers in Journal Issues,Maya Chen,4,7,b4d946e2e1f94cb13e60a1b9e794319be024c94e38fd4527188c02088c712bcd
-SPLIT-003,Integrity Checks for Article-Level CSV and JSON Exports,Jon Bell; Nora Kim,8,10,3c2d3b6b2c475293de078283930585eca69118466d0130926a5abe2f8e487cf9
+SPLIT-001,Synthetic Cohort Study of Editorial Workflow Timing,Alex Morgan; Priya Shah,1,4,aff9f894addce0a7919862f13c56bde958a522fde498f72c8c0d743398b7739b
+SPLIT-002,Rule-Based Detection of Article Headers in Journal Issues,Maya Chen,5,8,357e0d892585472ecea7de23cdb150b8f738696797a83364536cb17a012ffee1
+SPLIT-003,Integrity Checks for Article-Level CSV and JSON Exports,Jon Bell; Nora Kim,9,12,29a92e6bc3ad48aa9ac5e1025a8cd0f0786f4a841cdcd7ecf822aac96d08b448

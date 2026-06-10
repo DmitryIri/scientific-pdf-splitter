@@ -35,7 +35,18 @@ Commercial polish:
 - next implementation layer documented without overclaiming
 - repository description and topics aligned with the current implementation
 
-## Phase B.2 - Planned
+## Phase B.2 - Completed
+
+Final client review and safe value upgrade:
+
+- export manifest generated for the synthetic workflow
+- issue processing report generated for the sample issue
+- checksum artifact generated for sample outputs
+- invariant validation added for output counts
+- tests added for manifest, report, checksums, and invariant failure
+- README and architecture docs updated with workflow evidence
+
+## Next Extraction Layer - Planned
 
 Extraction implementation layer:
 
@@ -48,7 +59,7 @@ Extraction implementation layer:
 
 ## Future Enhancements
 
-Possible future work after Phase B.2:
+Possible future work after the workflow evidence upgrade:
 
 - reference section isolation
 - issue-level validation reports

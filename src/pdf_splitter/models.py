@@ -72,15 +72,15 @@ def sample_articles() -> list[ArticleMetadata]:
             "title": "Synthetic Cohort Study of Editorial Workflow Timing",
             "authors": ["Alex Morgan", "Priya Shah"],
             "page_start": 1,
-            "page_end": 3,
+            "page_end": 4,
             "abstract": "A synthetic study block used to demonstrate article boundary metadata.",
         },
         {
             "article_id": "SPLIT-002",
             "title": "Rule-Based Detection of Article Headers in Journal Issues",
             "authors": ["Maya Chen"],
-            "page_start": 4,
-            "page_end": 7,
+            "page_start": 5,
+            "page_end": 8,
             "abstract": (
                 "A synthetic methods block for illustrating deterministic "
                 "extraction output."
@@ -90,8 +90,8 @@ def sample_articles() -> list[ArticleMetadata]:
             "article_id": "SPLIT-003",
             "title": "Integrity Checks for Article-Level CSV and JSON Exports",
             "authors": ["Jon Bell", "Nora Kim"],
-            "page_start": 8,
-            "page_end": 10,
+            "page_start": 9,
+            "page_end": 12,
             "abstract": "A synthetic validation block showing SHA-256 metadata integrity checks.",
         },
     ]

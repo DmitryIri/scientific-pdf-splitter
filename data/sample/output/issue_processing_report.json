@@ -1,0 +1,9 @@
+{
+  "issue_id": "ISSUE-2026-01",
+  "pages_total": 12,
+  "articles_detected": 3,
+  "articles_exported": 3,
+  "csv_rows": 3,
+  "json_records": 3,
+  "validation_status": "passed"
+}

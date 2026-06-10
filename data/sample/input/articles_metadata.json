@@ -8,9 +8,9 @@
         "Priya Shah"
       ],
       "page_start": 1,
-      "page_end": 3,
+      "page_end": 4,
       "abstract": "A synthetic study block used to demonstrate article boundary metadata.",
-      "sha256": "97613dc0c6a86557b625ac27948d6279c69404dff1a35109fdb8c3ccfeca70b5"
+      "sha256": "aff9f894addce0a7919862f13c56bde958a522fde498f72c8c0d743398b7739b"
     },
     {
       "article_id": "SPLIT-002",
@@ -18,10 +18,10 @@
       "authors": [
         "Maya Chen"
       ],
-      "page_start": 4,
-      "page_end": 7,
+      "page_start": 5,
+      "page_end": 8,
       "abstract": "A synthetic methods block for illustrating deterministic extraction output.",
-      "sha256": "b4d946e2e1f94cb13e60a1b9e794319be024c94e38fd4527188c02088c712bcd"
+      "sha256": "357e0d892585472ecea7de23cdb150b8f738696797a83364536cb17a012ffee1"
     },
     {
       "article_id": "SPLIT-003",
@@ -30,10 +30,10 @@
         "Jon Bell",
         "Nora Kim"
       ],
-      "page_start": 8,
-      "page_end": 10,
+      "page_start": 9,
+      "page_end": 12,
       "abstract": "A synthetic validation block showing SHA-256 metadata integrity checks.",
-      "sha256": "3c2d3b6b2c475293de078283930585eca69118466d0130926a5abe2f8e487cf9"
+      "sha256": "29a92e6bc3ad48aa9ac5e1025a8cd0f0786f4a841cdcd7ecf822aac96d08b448"
     }
   ]
 }

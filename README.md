@@ -4,13 +4,17 @@
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-A portfolio project that demonstrates a synthetic demo and production-inspired architecture for scientific PDF article extraction workflows: metadata contracts, validation, CSV/JSON exports, CI, and testing.
+A Python document-processing portfolio proof for turning long scientific journal issues into article-level metadata exports with validation, manifests, checksums, and reproducible CSV/JSON outputs.
+
+It is useful for publishing workflows, research archives, and document-processing automation where teams need reliable issue-to-article structure before indexing, review, or downstream processing.
+
+The repository uses synthetic data and production-inspired contracts to demonstrate the workflow shape without claiming real article boundary detection.
 
 ```text
 article_id,title,page_start,page_end,sha256
-SPLIT-001,Synthetic Cohort Study of Editorial Workflow Timing,1,3,9c5b...
-SPLIT-002,Rule-Based Detection of Article Headers in Journal Issues,4,7,9f44...
-SPLIT-003,Integrity Checks for Article-Level CSV and JSON Exports,8,10,31a2...
+SPLIT-001,Synthetic Cohort Study of Editorial Workflow Timing,1,4,aff9...
+SPLIT-002,Rule-Based Detection of Article Headers in Journal Issues,5,8,357e...
+SPLIT-003,Integrity Checks for Article-Level CSV and JSON Exports,9,12,29a9...
 ```
 
 ## Current Scope
@@ -22,7 +26,10 @@ The implemented layer focuses on:
 - typed article metadata models
 - deterministic synthetic sample data
 - CSV and JSON export contracts
+- export manifest and issue processing report artifacts
+- checksum artifacts for public sample outputs
 - validation rules for article IDs, page ranges, authors, titles, and SHA-256 hashes
+- invariant validation for expected articles, exported articles, CSV rows, and JSON records
 - pytest, ruff, and GitHub Actions checks
 
 It does not include real article boundary detection or production extraction heuristics yet. The README, samples, and tests are intentionally framed to avoid overstating the current implementation.
@@ -49,6 +56,7 @@ python examples/quickstart.py
 ```
 
 The demo writes a synthetic PDF to `data/sample/input/sample_journal_issue.pdf` and article exports to `data/sample/output/articles.csv` and `data/sample/output/articles.json`.
+It also writes workflow evidence artifacts to `data/sample/output/export_manifest.json`, `data/sample/output/issue_processing_report.json`, and `data/sample/output/checksums.sha256`.
 
 ## Output Format
 
@@ -61,6 +69,56 @@ The demo writes a synthetic PDF to `data/sample/input/sample_journal_issue.pdf` 
 | `page_end` | Last page of the article block |
 | `sha256` | Deterministic SHA-256 digest for metadata integrity checks |
 
+## Workflow Evidence
+
+The public sample is intentionally small, but it follows an issue-level workflow shape:
+
+```text
+data/sample/input/sample_journal_issue.pdf
+        |
+        v
+synthetic article metadata
+        |
+        v
+CSV + JSON exports
+        |
+        v
+export_manifest.json + issue_processing_report.json + checksums.sha256
+```
+
+The generated manifest records the core output invariant:
+
+```json
+{
+  "issue_id": "ISSUE-2026-01",
+  "articles_expected": 3,
+  "articles_exported": 3,
+  "csv_rows": 3,
+  "json_records": 3,
+  "validation_status": "passed"
+}
+```
+
+The issue report shows the sample issue-level processing summary:
+
+```json
+{
+  "issue_id": "ISSUE-2026-01",
+  "pages_total": 12,
+  "articles_detected": 3,
+  "articles_exported": 3,
+  "csv_rows": 3,
+  "json_records": 3,
+  "validation_status": "passed"
+}
+```
+
+`checksums.sha256` records deterministic SHA-256 values for:
+
+- `articles.csv`
+- `articles.json`
+- `export_manifest.json`
+
 ## Architecture
 
 ```text
@@ -70,7 +128,7 @@ Synthetic PDF + metadata
 ArticleMetadata models
         |
         v
-Validator -> CSV/JSON writers -> downstream editorial workflow
+Validator -> CSV/JSON writers -> manifest/report/checksums -> downstream editorial workflow
 ```
 
 See also:
@@ -91,6 +149,10 @@ The next implementation layer can add these capabilities without changing the pu
 
 These are planned directions, not claims about the current version.
 
+## Production Adaptation
+
+A production adaptation would replace the synthetic metadata fixture with real PDF text extraction, article boundary detection, metadata parsing, and issue-specific validation rules. The current repository demonstrates the public-safe contract and verification pattern that those stages would feed.
+
 ## Running Tests
 
 ```bash
@@ -102,7 +164,7 @@ ruff check src/ tests/ examples/ tools/
 
 **Problem:** Scientific journal PDFs can require repeatable article-level exports before editorial, indexing, or data processing work can begin.
 
-**Stack:** Python 3.11+, PyMuPDF dependency placeholder, CSV/JSON output, pytest, ruff, GitHub Actions.
+**Stack:** Python 3.11+, PyMuPDF dependency placeholder, CSV/JSON output, manifest/report/checksum artifacts, pytest, ruff, GitHub Actions.
 
 **Role:** Sole engineer for the portfolio project structure, synthetic demo, metadata contract, validators, CI, and README framing.
 
