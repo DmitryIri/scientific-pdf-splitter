@@ -1,10 +1,10 @@
 # Architecture
 
-This repository is a synthetic demo and production-inspired architecture for article-level metadata exports from scientific journal issue PDFs.
+This repository implements the validation and export foundation for article-level metadata from scientific journal issue PDFs, demonstrated on synthetic data.
 
 ## Scope
 
-The current version implements the portfolio skeleton only:
+The current version implements the validation and export foundation:
 
 - typed article metadata model
 - deterministic synthetic sample data
@@ -17,7 +17,7 @@ The current version implements the portfolio skeleton only:
 - invariant validation for expected articles, exported articles, CSV rows, and JSON records
 - pytest and ruff checks in CI
 
-It does not include production extraction heuristics or private source logic.
+Real PDF text extraction and article boundary detection are an optional integration layer; this repository implements the validated export foundation those stages feed.
 
 ## Data Flow
 
@@ -69,4 +69,4 @@ A later phase can add these modules without changing the public output contract:
 - reference section isolation
 - issue-level validation reports
 
-This staged approach keeps the portfolio project reviewable while preserving a path toward a fuller document-processing pipeline.
+This staged design keeps the repository reviewable and reliable while preserving a clean path toward full PDF extraction.

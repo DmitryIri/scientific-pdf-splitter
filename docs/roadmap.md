@@ -1,6 +1,6 @@
 # Roadmap
 
-This roadmap keeps the portfolio project honest about what is implemented now and what belongs to later phases.
+This roadmap states what is implemented now and what belongs to later integration phases.
 
 ## Phase 0 - Completed
 
@@ -13,7 +13,7 @@ Repository setup and publication:
 
 ## Phase B.1 - Completed
 
-Portfolio skeleton and synthetic demo:
+Foundation and synthetic demo:
 
 - Python package structure under `src/pdf_splitter/`
 - typed article metadata model
@@ -30,7 +30,7 @@ Portfolio skeleton and synthetic demo:
 Commercial polish:
 
 - README clarified for a business and technical audience
-- current scope stated explicitly as a synthetic demo and portfolio project
+- current scope stated explicitly and in precise terms
 - potential business applications added
 - next implementation layer documented without overclaiming
 - repository description and topics aligned with the current implementation

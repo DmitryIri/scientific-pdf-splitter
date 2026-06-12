@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "scientific-pdf-splitter"
 version = "0.1.0"
-description = "Portfolio project for article-level exports from scientific journal PDFs using synthetic demo data."
+description = "Validated, audit-ready article-level data exports from scientific journal PDFs, with manifests and integrity checks."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
